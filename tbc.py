@@ -121,4 +121,9 @@ with row1, _lock:
     df4 = df3.copy()
     fig = px.pie(df4.tail(10), values='total', names='Country Name')
     st.plotly_chart(fig)
+    
+    st.subheader('Tabel Jumlah Rata-Rata Pertahun')
+    df5 = df3.copy()
+    df5['total'] = df5['total']/16
+    st.dataframe(df5)
 
